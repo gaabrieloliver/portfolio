@@ -27,3 +27,11 @@ img {
   max-width: 4ch; /* Quebra no 4° caractere (tamanho de 4 zeros 0) */
   text-transform: uppercase;
 }
+
+@media (max-width:800px) {
+  .experiencia .subtitulo {
+    font-size: 3rem;
+    text-transform: capitalize;
+    max-width: initial;
+  }
+}
