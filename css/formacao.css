@@ -1,20 +1,32 @@
 .formacao {
   background: #141414;
   color: #fff;
-
 }
+
 .formacao-container {
   max-width: 1200px;
-  padding: 2.5rem 1.25rem;
+  padding: 120px 20px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 6.25rem;
-  
+  position: relative;
+}
+
+.formacao-container::after{
+  content: '';
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url(/assets/decoration.svg)no-repeat center center;
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
 }
 
 .formacao .subtitulo {
   color: #000;
+  max-width: 5ch; /* ch = caracteres */
 }
 
 .formacao-texto {
@@ -22,7 +34,7 @@
   line-height: 1.33rem;
   max-width: 40ch; /* ch = caracteres */
   margin-bottom: 60px;
-  color: #a3a3a3
+  color: #a3a3a3;
 }
 
 .formacao-texto strong {
@@ -43,7 +55,6 @@
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  
 }
 
 .faculdade-tipo {
@@ -61,7 +72,7 @@
   position: relative; /* Para receber detalhe */
 }
 
-.faculdade-curso::before { 
+.faculdade-curso::before {
   content: '';
   display: block;
   width: 4px;
@@ -75,7 +86,6 @@
   font-size: 1.125rem;
   color: #a3a3a3;
   display: flex;
-  
 }
 
 .cursos {
@@ -93,14 +103,12 @@
 
 .formacao-extra h3::before {
   display: block;
-  content: "";
+  content: '';
   width: 24px;
   height: 24px;
   position: absolute;
   left: -36px;
   top: -4px;
-
-
 }
 
 .cursos h3::before {
@@ -108,7 +116,7 @@
 }
 
 .idiomas h3::before {
-background: url(/assets/idiomas.svg) no-repeat center center;
+  background: url(/assets/idiomas.svg) no-repeat center center;
 }
 
 .formacao-extra li {
@@ -124,4 +132,29 @@ background: url(/assets/idiomas.svg) no-repeat center center;
 .cursos li {
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+  .formacao-container {
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .formacao .subtitulo {
+    text-transform: none;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: capitalize;
+    max-width: initial;
+  }
+
+  .formacao-texto {
+    font-size: 1.125rem;
+  }
+
+  .formacao-extra h3::before {
+    position: initial;
+    margin-bottom: 10px;
+  }
 }
